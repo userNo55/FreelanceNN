@@ -132,13 +132,28 @@
         .section-header {
             display: flex;
             justify-content: space-between;
-            align-items: end;
+            align-items: flex-end;
             margin-bottom: 30px;
             border-bottom: 1px solid #222;
             padding-bottom: 15px;
+            gap: 20px; /* Защита: элементы не столкнутся до 600px */
         }
-        .section-title { font-size: 2.5rem; font-weight: 700; text-transform: uppercase; }
-        .section-subtitle { color: #888; font-size: 0.9rem; }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem); /* Шрифт плавно уменьшается */
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.1;
+            flex-shrink: 0;
+        }
+
+        .section-subtitle {
+            color: #888;
+            font-size: clamp(0.85rem, 2vw, 0.9rem);
+            line-height: 1.4;
+            text-align: right;
+            max-width: 50%;
+        }
 
         .services-grid {
             display: grid;
@@ -281,8 +296,20 @@
         .social-links a { display: inline-block; margin-right: 15px; font-size: 1.5rem; color: #555; transition: 0.3s; }
         .social-links a:hover { color: #a855f7; transform: translateY(-3px); }
 
-        /* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
+                /* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
         @media (max-width: 900px) {
+            /* Новые правила: перестраиваем шапку секции в столбик на планшетах */
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .section-subtitle {
+                text-align: left;
+                max-width: 100%;
+            }
+
+            /* Ваш существующий код без изменений */
             .hero-section { flex-direction: column-reverse; text-align: center; gap: 40px; }
             .hero-text { padding-right: 0; }
             .hero-text p { margin: 0 auto 30px; }
@@ -293,6 +320,12 @@
         }
 
         @media (max-width: 600px) {
+            /* Новые правила: немного уменьшаем отступ между заголовками на смартфонах */
+            .section-header {
+                gap: 6px;
+            }
+
+            /* Ваш существующий код без изменений */
             .stats-grid { grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px; }
             .tool-process-grid { grid-template-columns: 1fr; }
             .cta-banner { grid-column: 1; }
