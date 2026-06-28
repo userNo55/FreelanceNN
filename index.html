@@ -95,15 +95,17 @@
         .hero-image-wrapper {
             flex: 1;
             min-width: 280px;
+            max-width: 400px; /* Добавлено: ограничиваем сам контейнер */
             display: flex;
             justify-content: flex-end;
+            align-items: center; /* Добавлено: центрируем картинку по вертикали */
             position: relative;
+            width: 100%; /* Добавлено: для корректного сжатия на мобильных */
         }
 
         .hero-image-wrapper img {
             width: 100%;
-            max-width: 400px;
-            height: auto;
+            height: auto; /* Теперь пропорции будут идеальными */
             border-radius: 20px;
             border: 2px solid rgba(168, 85, 247, 0.4);
             box-shadow: 0 20px 50px rgba(168, 85, 247, 0.15);
