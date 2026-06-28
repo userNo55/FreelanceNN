@@ -18,7 +18,7 @@
             background-color: #0b0b0e;
             color: #ffffff;
             line-height: 1.5;
-            overflow-x: hidden;
+            /* Убрал overflow-x: hidden; отсюда, чтобы текст не обрезался */
         }
 
         a { text-decoration: none; color: inherit; }
@@ -57,10 +57,9 @@
             padding-right: 20px;
         }
 
-        /* ГЛАВНОЕ ИСПРАВЛЕНИЕ: АДАПТИВНЫЙ РАЗМЕР ШРИФТА */
         .hero-text h1 {
-            /* Минимум 2.5rem, идеально 5.5vw от ширины экрана, максимум 5rem */
-            font-size: clamp(2.8rem, 6vw, 5.5rem); 
+            /* Адаптивный размер: минимум 2.5rem, максимум 5.5rem, зависит от ширины экрана */
+            font-size: clamp(2.8rem, 6.5vw, 5.5rem); 
             font-weight: 800;
             line-height: 1;
             background: linear-gradient(180deg, #a855f7 0%, #7c3aed 50%, #ffffff 100%);
@@ -70,11 +69,7 @@
             letter-spacing: -1px;
             margin-bottom: 20px;
             text-transform: uppercase;
-            
-            /* Красивый перенос строк без разрыва слов */
-            text-wrap: balance; 
-            word-break: keep-all;
-            overflow-wrap: normal;
+            text-wrap: balance; /* Красивый перенос по смыслу */
         }
 
         .hero-text p {
@@ -316,11 +311,13 @@
     <!-- Герой (заголовок + фото) -->
     <section class="hero-section">
         <div class="hero-text">
+            <!-- Просто текст, никаких <br>, он сам подстроится под ширину -->
             <h1>КРЕАТИВНЫЙ РАЗРАБОТЧИК</h1>
             <p>Я создаю современные веб-сайты и приложения, которые сочетают эстетику с мощным функционалом, чтобы выделить ваш бизнес.</p>
             <a href="#projects" class="cta-btn">Смотреть проекты <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="hero-image-wrapper">
+            <!-- ЗАМЕНИТЕ ССЫЛКУ НА ВАШЕ ФОТО -->
             <img src="portrait.jpg" alt="Портрет разработчика">
         </div>
     </section>
