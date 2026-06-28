@@ -53,23 +53,28 @@
 
         .hero-text {
             flex: 1;
-            min-width: 300px;
+            min-width: 320px;
             padding-right: 20px;
         }
 
+        /* ГЛАВНОЕ ИСПРАВЛЕНИЕ: АДАПТИВНЫЙ РАЗМЕР ШРИФТА */
         .hero-text h1 {
-            font-size: 5rem; /* УМЕНЬШИЛ с 6rem */
+            /* Минимум 2.5rem, идеально 5.5vw от ширины экрана, максимум 5rem */
+            font-size: clamp(2.8rem, 6vw, 5.5rem); 
             font-weight: 800;
             line-height: 1;
             background: linear-gradient(180deg, #a855f7 0%, #7c3aed 50%, #ffffff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: -1px; /* Чуть уменьшил разрядку */
+            letter-spacing: -1px;
             margin-bottom: 20px;
             text-transform: uppercase;
-            word-wrap: break-word; /* ДОБАВИЛ ДЛЯ ПЕРЕНОСА ДЛИННЫХ СЛОВ */
-            overflow-wrap: break-word;
+            
+            /* Красивый перенос строк без разрыва слов */
+            text-wrap: balance; 
+            word-break: keep-all;
+            overflow-wrap: normal;
         }
 
         .hero-text p {
@@ -279,9 +284,8 @@
         .social-links a { display: inline-block; margin-right: 15px; font-size: 1.5rem; color: #555; transition: 0.3s; }
         .social-links a:hover { color: #a855f7; transform: translateY(-3px); }
 
-        /* --- МОБИЛЬНАЯ АДАПТАЦИЯ (Здесь исправлены размеры) --- */
+        /* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
         @media (max-width: 900px) {
-            .hero-text h1 { font-size: 3.5rem; }
             .hero-section { flex-direction: column-reverse; text-align: center; gap: 40px; }
             .hero-text { padding-right: 0; }
             .hero-text p { margin: 0 auto 30px; }
@@ -292,7 +296,6 @@
         }
 
         @media (max-width: 600px) {
-            .hero-text h1 { font-size: 2.8rem; } /* Ещё меньше для телефонов */
             .stats-grid { grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px; }
             .tool-process-grid { grid-template-columns: 1fr; }
             .cta-banner { grid-column: 1; }
@@ -313,15 +316,22 @@
     <!-- Герой (заголовок + фото) -->
     <section class="hero-section">
         <div class="hero-text">
-            <h1>КРЕАТИВНЫЙ<br>РАЗРАБОТЧИК</h1>
+            <h1>КРЕАТИВНЫЙ РАЗРАБОТЧИК</h1>
             <p>Я создаю современные веб-сайты и приложения, которые сочетают эстетику с мощным функционалом, чтобы выделить ваш бизнес.</p>
             <a href="#projects" class="cta-btn">Смотреть проекты <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="hero-image-wrapper">
-            <!-- ЗАМЕНИТЕ ССЫЛКУ НА ВАШЕ ФОТО -->
             <img src="portrait.jpg" alt="Портрет разработчика">
         </div>
     </section>
+
+    <!-- Статистика -->
+    <div class="stats-grid">
+        <div class="stat-item"><h3>5+</h3><p>Лет опыта</p></div>
+        <div class="stat-item"><h3>40+</h3><p>Проектов</p></div>
+        <div class="stat-item"><h3>25+</h3><p>Довольных клиентов</p></div>
+        <div class="stat-item"><h3>10+</h3><p>Технологий</p></div>
+    </div>
 
     <!-- Что я делаю -->
     <section>
@@ -358,7 +368,7 @@
         </div>
     </section>
 
-    <!-- Проекты (Здесь ровно 2 ваших проекта) -->
+    <!-- Проекты -->
     <section id="projects">
         <div class="section-header">
             <div class="section-title">Избранные проекты</div>
@@ -370,7 +380,6 @@
             <!-- КЕЙС 1: Vilka Story -->
             <div class="project-card">
                 <div class="project-img">
-                    <!-- Если есть скриншот, вставьте ссылку в src. Сейчас стоит заглушка -->
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500" alt="Vilka Story">
                     <span class="tag">01</span>
                 </div>
@@ -409,7 +418,7 @@
         </div>
     </section>
 
-    <!-- Инструменты и Процесс (Сетка 3 колонки) -->
+    <!-- Инструменты и Процесс -->
     <div class="tool-process-grid">
         
         <!-- Навыки -->
