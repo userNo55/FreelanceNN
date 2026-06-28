@@ -21,10 +21,7 @@
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        a { text-decoration: none; color: inherit; }
 
         .container {
             max-width: 1200px;
@@ -319,7 +316,7 @@
             <a href="#projects" class="cta-btn">Смотреть проекты <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="hero-image-wrapper">
-            <!-- Замените src на путь к вашему фото. Если нет фото, используйте заглушку -->
+            <!-- ЗАМЕНИТЕ ССЫЛКУ НА ВАШЕ ФОТО -->
             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&c=force" alt="Портрет разработчика">
         </div>
     </section>
@@ -367,37 +364,54 @@
         </div>
     </section>
 
-    <!-- Проекты -->
+    <!-- Проекты (Здесь ровно 2 ваших проекта) -->
     <section id="projects">
         <div class="section-header">
             <div class="section-title">Избранные проекты</div>
-            <a href="#" class="section-subtitle">Все проекты <i class="fas fa-arrow-right"></i></a>
+            <div class="section-subtitle">Кейсы, демонстрирующие мой уровень</div>
         </div>
 
         <div class="projects-grid">
+            
+            <!-- КЕЙС 1: Vilka Story -->
             <div class="project-card">
                 <div class="project-img">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500" alt="Проект 1">
+                    <!-- Если есть скриншот, вставьте ссылку в src. Сейчас стоит заглушка -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500" alt="Vilka Story">
                     <span class="tag">01</span>
                 </div>
                 <div class="project-info">
-                    <h4>Brandix Studio</h4>
-                    <p>Разработка лендинга для студии дизайна</p>
-                    <a href="#" class="project-link">Перейти <i class="fas fa-arrow-right"></i></a>
+                    <h4>Vilka Story</h4>
+                    <p style="color: #7c3aed; font-weight: 600; margin-bottom: 10px;">Платформа для монетизации контента</p>
+                    <p><strong>Задача:</strong> Разработать веб-платформу для публикации глав с автоматическими платежами.</p>
+                    <p style="margin-top: 10px;"><strong>Решение:</strong> Next.js + Supabase + Юкасса. Система подписок, админ-панель для авторов.</p>
+                    <p style="margin-top: 10px;"><strong>Результат:</strong> Продукт запущен, авторы получают выплаты автоматически.</p>
+                    
+                    <a href="https://vilkastory.vercel.app" target="_blank" class="project-link" style="margin-top: 15px;">
+                        Посмотреть <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
+            <!-- КЕЙС 2: Hobby 101 -->
             <div class="project-card">
                 <div class="project-img">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500" alt="Проект 2">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500" alt="Hobby 101">
                     <span class="tag">02</span>
                 </div>
                 <div class="project-info">
-                    <h4>Taskly App</h4>
-                    <p>Дашборд для управления проектами</p>
-                    <a href="#" class="project-link">Перейти <i class="fas fa-arrow-right"></i></a>
+                    <h4>Hobby 101</h4>
+                    <p style="color: #7c3aed; font-weight: 600; margin-bottom: 10px;">Офлайн-гид с системой мотивации</p>
+                    <p><strong>Задача:</strong> Создать офлайн-приложение с удержанием пользователей через геймификацию.</p>
+                    <p style="margin-top: 10px;"><strong>Решение:</strong> React Native + Supabase. 101 инструкция, офлайн-режим, маскот-кролик и система мотивации.</p>
+                    <p style="margin-top: 10px;"><strong>Результат:</strong> Приложение запущено в RuStore. Пользователи проходят проекты без интернета.</p>
+
+                    <a href="https://www.rustore.ru/catalog/app/ru.hobby101" target="_blank" class="project-link" style="margin-top: 15px;">
+                        Посмотреть <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
+
         </div>
     </section>
 
